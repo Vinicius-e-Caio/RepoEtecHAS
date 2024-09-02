@@ -1,0 +1,56 @@
+CREATE TABLE Tecnico(
+     id_tecnico		numeric(3)	PRIMARY KEY,
+     nm_tecnico		varchar(100)
+);
+CREATE TABLE Servico(
+    id_servico		numeric(3)	PRIMARY KEY,
+    ds_servico		varchar(100),
+    preco_hora		numeric(5,2)
+);
+CREATE TABLE Ordem_servico(
+    id_os			numeric(3) 	PRIMARY KEY,
+    dt_inicio_os	DATE,
+    dt_fim_os		DATE,
+    tempo			numeric(3),
+    fk_tecnico 		REFERENCES Tecnico(id_tecnico),
+    fk_servico 		REFERENCES Servico(id_servico)
+);
+
+BEGIN
+	INSERT INTO Tecnico VALUES(001, 'Vinicius de Quito');
+	INSERT INTO Tecnico VALUES(002, 'Isabel Arussia');
+	INSERT INTO Tecnico VALUES(003, 'Sheldon London');
+	INSERT INTO Tecnico VALUES(004, 'Beethoven da Silva');
+
+	INSERT INTO Servico VALUES(001, 'Backend', 10);
+	INSERT INTO Servico VALUES(002, 'Database', 20);
+	INSERT INTO Servico VALUES(003, 'Frontend', 35);
+	INSERT INTO Servico VALUES(004, 'Scrum Master', 74);
+END;
+
+BEGIN
+	INSERT INTO Ordem_servico VALUES(001, TO_DATE('2024-02-11','YYYY-DD-MM'), TO_DATE('2024-02-11','YYYY-DD-MM'), 18, 001, 002);
+	INSERT INTO Ordem_servico VALUES(002, TO_DATE('2024-02-11','YYYY-DD-MM'), TO_DATE('2024-02-11','YYYY-DD-MM'), 21, 002, 003);
+	INSERT INTO Ordem_servico VALUES(003, TO_DATE('2024-02-11','YYYY-DD-MM'), TO_DATE('2024-02-11','YYYY-DD-MM'), 77, 003, 001);
+	INSERT INTO Ordem_servico VALUES(004, TO_DATE('2024-02-11','YYYY-DD-MM'), TO_DATE('2024-02-11','YYYY-DD-MM'), 34, 001, 003);
+	INSERT INTO Ordem_servico VALUES(005, TO_DATE('2024-02-11','YYYY-DD-MM'), TO_DATE('2024-02-11','YYYY-DD-MM'), 11, 003, 002);
+	INSERT INTO Ordem_servico VALUES(006, TO_DATE('2024-02-11','YYYY-DD-MM'), TO_DATE('2024-02-11','YYYY-DD-MM'), 10, 003, 001);
+	INSERT INTO Ordem_servico VALUES(007, TO_DATE('2024-02-11','YYYY-DD-MM'), TO_DATE('2024-02-11','YYYY-DD-MM'), 5, 001, 003);
+	INSERT INTO Ordem_servico VALUES(008, TO_DATE('2024-02-11','YYYY-DD-MM'), TO_DATE('2024-02-11','YYYY-DD-MM'), 8, 002, 001);
+    INSERT INTO Ordem_servico VALUES(009, TO_DATE('2024-02-11','YYYY-DD-MM'), TO_DATE('2024-02-11','YYYY-DD-MM'), 17, 003, 002);
+END;
+
+DECLARE
+    id numeric(3) := 001;
+    sal numeric(6,2);
+	ids numeric(3) := 001;
+    temp numeric(3);
+	phora numeric(5,2);
+BEGIN
+    SELECT tempo INTO temp FROM Ordem_servico WHERE fk_servico = ids;
+    SELECT preco_hora INTO phora FROM servico WHERE id_servico = ids;
+
+    sal := phora * temp;
+
+    dbms_output.put_line('O Salário do funcionário do ID: '|| id || ' é: ' || sal);
+END;

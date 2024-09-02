@@ -1,0 +1,9 @@
+Exercicios:
+1. Dados os anos pelo usuário, informar quantos meses completados ele tem
+Entrada: 19		Saída: 228 meses
+Entrada: 45.8		Saída: 549 meses
+
+2. Dados os dias de vida de um usuário, informar quantos anos, meses e dias de vida ele tem
+Entrada: 1940		Saída: 5anos, 3meses e 25dias
+
+* Considere o ano com 365 dias e mes com 30 dias 

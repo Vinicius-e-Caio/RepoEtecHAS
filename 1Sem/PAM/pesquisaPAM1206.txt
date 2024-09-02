@@ -1,0 +1,79 @@
+-------------------------------------------------------------
+
+> Quais frameworks existem para desenvolvimento mobile?
+
+Frameworks Populares:
+Flutter (Google)
+React Native (Facebook)
+Xamarin (Microsoft)
+Ionic
+
+Outros:
+Tauri
+NativeScript
+Corona SDK
+Appcelerator
+PhoneGap (Apache Cordova)
+Adobe AIR
+JQuery Mobile
+FireMonkey (Embarcadero)
+Qt (The Qt Project)
+Kivy (Python)
+
+-------------------------------------------------------------
+
+> Quias frameworks existem para desenvolvimento mobile multiplataforma?
+
+
+Multiplataforma:
+
+Flutter
+React Native
+Xamarin
+Ionic
+Tauri
+NativeScript
+Corona SDK
+Appcelerator
+PhoneGap (Apache Cordova)
+Qt (The Qt Project)
+Kivy (Python)
+
+Não é necessariamente multiplataforma:
+
+Adobe AIR (foco em desktop, mas pode ser usado para mobile em alguns casos)
+FireMonkey (Embarcadero) (principalmente para desktop, mas tem recursos mobile limitados)
+JQuery Mobile (cria aplicativos web mobile, não compila para aplicativos nativos)
+
+-------------------------------------------------------------
+
+> O que é o MVVM Toolkit?
+
+Mvvm (também conhecido como Kit de Ferramentas do MVVM, anteriormente denominado Microsoft. Toolkit. Mvvm ) é uma biblioteca MVVM moderna, rápida e modular. Ele faz parte do Kit de Ferramentas da Comunidade .
+
+- Microsoft Learn
+
+-------------------------------------------------------------
+
+> O que é uma collection view?
+
+O CollectionView é uma exibição flexível e de desempenho para apresentar listas de dados usando especificações de layout diferentes.
+
+-------------------------------------------------------------
+
+> O que é um observable collection?
+
+Representa uma coleção dinâmica de dados que fornece notificações quando os itens são adicionados ou removidos ou quando toda a lista é atualizada.
+
+-------------------------------------------------------------
+
+> Quando adicionamos a notação Observable Property? (???)
+
+A finalidade é justamente permitir que a interface do usuário seja atualizada automaticamente quando os valores da propriedade mudarem. Isso é bem útil para manter a sincronização entre a ViewModel e a View
+
+-------------------------------------
+
+> O que é uma View? e uma model? para que serve a ViewModel?
+View: é aquilo que será visto pelo usuário e o usuário vai interagir (interface gráfica)
+Model: são as dados e a lógica do aplicativo, não aparece na tela (back-end)
+ViewModel: é o intermediário entre a model e a view, ela contém lógica específica para a interface, como formatação de dados e comandos, e ela também atualiza a view quando os dados mudam e vice-versa

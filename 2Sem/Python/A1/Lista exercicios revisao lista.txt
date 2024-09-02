@@ -1,0 +1,18 @@
+Faça os seguintes exercícios e coloque-os em um menu:
+
+1. Pedir para o usuário escrever uma frase. Depois um caractere para localizar e outro para substituir, aplicando na frase. Exemplo:
+Frase: "Infelizmente as férias terminaram e temos que aturar os alunos."
+Caractere a ser localizado: a
+Trocar pelo caractere: !
+Frase: "Infelizmente !s féri!s termin!r!m e temos que !tur!r os !lunos."
+
+2 - Dada uma lista com diversos dados inseridos de todos os tipos, separar em
+listas de um tipo específico. Exemplo:
+lista original: 45 5.7 "Férias" True False 99 34
+lista int: 45 99 34
+lista float: 5.7
+lista string: "Férias"
+lista boolean: True False
+
+3 - Criar uma lista onde o usuário possa inserir dados, com o limite de dez elementos.
+

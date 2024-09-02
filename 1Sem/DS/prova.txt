@@ -1,0 +1,14 @@
+Considere o valor dos vetores abaixo para fazer os próximos exercícios:
+    v1 = [41, 72, 39, 4, 35]
+    v2 = [0, 0, 0, 0, 0]
+
+Fazer um procedimento chamado 'inverte_vetor(v1, v2)' que copie os elementos invertidos do vetor v1
+em v2, ou seja, o primeiro elemento de v1 será o último de v2.
+	inverte_vetor(v1, v2)
+	>> [41, 72, 39, 4, 35]
+	>> [35, 4, 39, 72, 41]
+
+
+Fazer um procedimento chamado 'separa_pares_impares(v)' que coloque nas posições mais a esquerda os valores pares e mais a diretia os impares.
+	separa_pares_impares(v1)
+	>> [72, 4, 41, 39, 35]

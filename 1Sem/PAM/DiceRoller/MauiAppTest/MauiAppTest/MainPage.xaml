@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppTest.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                x:Name="DiceResultLabel"
+                Text="0"
+                FontSize="50"/>
+
+            <Label
+                x:Name="LabelPicker"
+                Text="Selecione um lado"
+                FontSize="Large"/>
+            
+            <Picker x:Name="SidesNumberPicker"
+                Title="Selecione a quantidade de lados do dado">
+                
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>4</x:String>
+                        <x:String>6</x:String>
+                        <x:String>8</x:String>
+                        <x:String>10</x:String>
+                        <x:String>12</x:String>
+                        <x:String>20</x:String>
+                        <x:String>1000</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+                
+            </Picker>
+
+            <Button
+                x:Name="RollDiceButton"
+                Clicked="RollDiceButton_Clicked"
+                Text="Rolar os dados"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

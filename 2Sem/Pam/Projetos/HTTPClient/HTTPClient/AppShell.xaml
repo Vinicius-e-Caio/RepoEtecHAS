@@ -6,10 +6,19 @@
     xmlns:local="clr-namespace:HTTPClient.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="HTTPClient">
+    <TabBar Title="páginas" >
+        <Tab Title="posts">
+            <ShellContent
+                Title="post"
+                ContentTemplate="{DataTemplate local:PostView}"
+                Route="MainPage" />
+        </Tab>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:PostView}"
-        Route="MainPage" />
-
+        <Tab Title="todo">
+            <ShellContent
+            Title="todo"
+            ContentTemplate="{DataTemplate local:TodoView}"
+            Route="MainPage" />
+        </Tab>
+    </TabBar>
 </Shell>

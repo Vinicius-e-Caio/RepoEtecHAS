@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace HTTPClient.Services
 {
-    public class PostService
+    public class TodoService
     {
         private HttpClient httpClient;
-        private Post post;
-        private ObservableCollection<Post> posts;
+        private Todo todo;
+        private ObservableCollection<Todo> todos;
         private JsonSerializerOptions jsonSerializerOptions;
 
-        public PostService()
+        public TodoService()
         {
             httpClient = new HttpClient();
             jsonSerializerOptions = new JsonSerializerOptions
@@ -27,10 +27,10 @@ namespace HTTPClient.Services
             };
         }
 
-        public async Task<ObservableCollection<Post>> getPosts()
+        public async Task<ObservableCollection<Todo>> getTodos()
         {
-            Uri uri = new Uri("https://jsonplaceholder.typicode.com/posts");
-            ObservableCollection<Post> items = new ObservableCollection<Post>();
+            Uri uri = new Uri("https://jsonplaceholder.typicode.com/todos");
+            ObservableCollection<Todo> items = new ObservableCollection<Todo>();
 
             try
             {
@@ -38,7 +38,7 @@ namespace HTTPClient.Services
                 if (response.IsSuccessStatusCode)
                 {
                     string content = await response.Content.ReadAsStringAsync();
-                    items = JsonSerializer.Deserialize<ObservableCollection<Post>>(content, jsonSerializerOptions);
+                    items = JsonSerializer.Deserialize<ObservableCollection<Todo>>(content, jsonSerializerOptions);
                 }
             }
             catch (Exception ex)
@@ -48,6 +48,4 @@ namespace HTTPClient.Services
             return items;
         }
     }
-
-
 }

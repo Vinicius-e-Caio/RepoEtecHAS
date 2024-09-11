@@ -1,4 +1,6 @@
-﻿namespace HTTPClient
+﻿using HTTPClient.Views;
+
+namespace HTTPClient
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new PostView();
         }
     }
 }

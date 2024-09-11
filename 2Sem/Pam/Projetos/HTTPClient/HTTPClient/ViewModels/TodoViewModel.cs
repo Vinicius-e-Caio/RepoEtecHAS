@@ -11,22 +11,22 @@ using System.Windows.Input;
 
 namespace HTTPClient.ViewModels
 {
-    public partial class PostViewModel : ObservableObject
+    public partial class TodoViewModel : ObservableObject
     {
         [ObservableProperty]
-        ObservableCollection<Post> posts;
+        ObservableCollection<Todo> todos;
 
-        public ICommand getPostsCommand { get; }
+        public ICommand getTodosCommand { get; }
 
-        public PostViewModel() 
+        public TodoViewModel()
         {
-            getPostsCommand = new Command(getPosts);
+            getTodosCommand = new Command(getTodos);
         }
 
-        public async void getPosts()
+        public async void getTodos()
         {
-            PostService postService = new PostService();
-            Posts = await postService.getPosts();
+            TodoService todoService = new TodoService();
+            Todos = await todoService.getTodos();
         }
     }
 }

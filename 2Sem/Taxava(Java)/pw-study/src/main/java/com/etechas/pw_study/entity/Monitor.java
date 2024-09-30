@@ -36,7 +36,7 @@ public class Monitor {
     private Disciplina disciplina;
 
     @ManyToMany
-    @JoinTable(name = "TBL_REL_MONITOR_DISPONIBILIDADE",
+    @JoinTable(name = "TBL_REL_TUTOR_DISPONIBILIDADE",
                joinColumns = @JoinColumn(name = "ID_MONITOR"),
                inverseJoinColumns = @JoinColumn(name = "ID_DISPONIBILIDADE")
 

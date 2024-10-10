@@ -34,25 +34,34 @@ while True:
                 comentario = input("Dgite o comentário que deseja adicionar: ")
                 arq.write(comentario + "\n")
         case 2:
-            print("2 - Contar quantas vogais \n")
-            with open("arquivos.txt", "r", encoding="utf-8") as arq:
-                arq.seek(0)
-                lista = arq.readlines()
-                content = "".join(lista)
-                vogais = "aeiou"
-                for vogal in content:
-                    if vogal.lower() in vogais:
-                        contadorVogais += 1
-                print("Os comentários ao todo tem:",contadorVogais , "vogais")
+            try:
+                print("2 - Contar quantas vogais \n")
+                with open("arquivos.txt", "r", encoding="utf-8") as arq:
+                    arq.seek(0)
+                    lista = arq.readlines()
+                    content = "".join(lista)
+                    vogais = "aeiou"
+                    for vogal in content:
+                        if vogal.lower() in vogais:
+                            contadorVogais += 1
+                    print("Os comentários ao todo tem:",contadorVogais , "vogais")
+            except FileNotFoundError as error:
+                print("Execute a função 1 primeiro para utilizar as outras")
+                continue
         case 3:
-            print("3 - Contar quantas palavras\n")
-            with open("arquivos.txt", "r", encoding="utf-8") as arq:
-                arq.seek(0)
-                lista = arq.readlines()
-                content = "".join(lista)
-                for letras in content:
-                    contadorPalavras += 1
-                print("Os comentários ao todo tem:",contadorPalavras , "palavras")
+            try:
+                print("3 - Contar quantas palavras\n")
+                with open("arquivos.txt", "r", encoding="utf-8") as arq:
+                    arq.seek(0)
+                    lista = arq.readlines()
+                    content = "".join(lista)
+                    content = content.split()
+                    for palavras in content:
+                        contadorPalavras += 1
+                    print("Os comentários ao todo tem:",contadorPalavras , "palavras")
+            except FileNotFoundError as error:
+                print("Execute a função 1 primeiro para utilizar as outras")
+                continue
         case 0:
             break
         case _:

@@ -10,39 +10,45 @@ using System.Threading.Tasks;
 
 namespace MeteorologyPrevision.Services
 {
-    public class LocationService
+    public class MeteorologyService
     {
         private HttpClient httpClient;
         private JsonSerializerOptions jsonSerializerOptions;
 
-        public LocationService()
+        public MeteorologyService()
         {
             httpClient = new HttpClient();
-            jsonSerializerOptions = new JsonSerializerOptions { 
+            jsonSerializerOptions = new JsonSerializerOptions
+            {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                PropertyNameCaseInsensitive = true,
                 WriteIndented = true
             };
         }
-        public async Task<ObservableCollection<Location>> getLocations()
+        public async Task<ObservableCollection<Meteorology>> getClimate(int id)
         {
-            Uri uri = new Uri("https://brasilapi.com.br/api/cptec/v1/clima/previsao/" );
-            //TO DO: variável para linkar a view com ViewModel
-            ObservableCollection<Meteorology> items = new ObservableCollection<Meteorology>();
-
+            Uri uri = new Uri("https://brasilapi.com.br/api/cptec/v1/clima/previsao/"+id);
+            
             try
             {
                 HttpResponseMessage response = await httpClient.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
+
                     string content = await response.Content.ReadAsStringAsync();
-                    items = JsonSerializer.Deserialize<ObservableCollection<Meteorology>>(content, jsonSerializerOptions);
+                    var meteorology = JsonSerializer.Deserialize<Meteorology>(content, jsonSerializerOptions);
+                    if (meteorology != null)
+                    {
+                        var items = new ObservableCollection<Meteorology> { meteorology};
+                        return items;
+                    }                
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
-            return items;
+            return null;
         }
     }
 }

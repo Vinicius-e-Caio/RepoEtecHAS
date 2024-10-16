@@ -12,5 +12,29 @@
         <Entry x:Name="LocationEntry"
                Placeholder="Digite o id de uma Cidade: "
                Completed="LocationEntry_Completed"/>
+        <CollectionView ItemsSource="{Binding Meteorologies}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Cidade}"/>
+                        <Label Text="{Binding Estado}"/>
+                        <Label Text="{Binding Atualizado_em}"/>
+
+                        <CollectionView ItemsSource="{Binding Clima}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding Data}" />
+                                        <Label Text="{Binding Condicao_desc}" />
+                                        <Label Text="{Binding Min}" />
+                                        <Label Text="{Binding Max}" />
+                                    </VerticalStackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>

@@ -1,0 +1,19 @@
+{
+    "0": {
+        "nome": "Caio",
+        "idade": 17,
+        "email": "teste@mail.com"
+    }
+}{
+    "1": {
+        "nome": "Jair",
+        "idade": 16,
+        "email": "teste@mail.com"
+    }
+}{
+    "2": {
+        "nome": "Mario",
+        "idade": 15,
+        "email": "teste@mail.com"
+    }
+}

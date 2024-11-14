@@ -10,7 +10,7 @@ try:
     username = 'sa'
     password = '*123456HAS*'
     # Conexão
-    conn = pyodbc.connect('DRIVER={SQL Server}; SERVER=' + server + ';DATABSE=' + database + ';UID=' + username + ';PWD=' + password)
+    conn = pyodbc.connect('DRIVER={SQL Server}; SERVER=' + server + ';DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     inst_cadastro = conn.cursor()
     inst_consulta = conn.cursor()
 except Exception as e:

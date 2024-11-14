@@ -61,12 +61,10 @@ while conexao:
 
             dados_df = pd.DataFrame.from_records(lista_dados,
                                                  columns=['Id', 'Tipo', 'Nome', 'Idade'], index='Id')
-            
+            # dataframe copia os dados numa planilha virtual (como se fosse um excel)
             if dados_df.empty:
                 print("Sem dados")
             else:
                 print(dados_df)
         
-
-
-    input("Pressione qualquer tecla para continuar")
+    input("\nPressione qualquer tecla para continuar")

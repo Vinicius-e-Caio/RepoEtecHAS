@@ -21,5 +21,6 @@ public class MonitorController {
     public ResponseEntity<Monitor> cadastrarMonitor(@RequestBody Monitor monitor){
         var newMonitor = service.cadastrarMonitor(monitor);
         return ResponseEntity.status(HttpStatus.CREATED).body(newMonitor);
+        
     }
 }

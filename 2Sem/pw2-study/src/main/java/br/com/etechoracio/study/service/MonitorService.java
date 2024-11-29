@@ -16,10 +16,10 @@ public class MonitorService {
         var existe = repository.findById(monitor.getId());
         var existingTelefone = repository.findByTelefone(monitor.getWhatsapp());
         var existingEmail = repository.findByEmail(monitor.getEmail());
-        if(existe.isEmpty())
+        if(existe.isEmpty() && existingEmail.getEmail().isEmpty() && existingTelefone.getWhatsapp().isEmpty())
             return repository.save(monitor);
         else
-            throw new RuntimeException("Nome do monitor já cadastrado");
+            throw new RuntimeException("Já existe o monitor com o mesmo email ou o mesmo telefone cadastrado");
     }
 
 }
